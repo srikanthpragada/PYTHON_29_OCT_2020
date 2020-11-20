@@ -12,6 +12,6 @@ print(number_funs.iseven(10))
 print(nf.iseven(11))
 print(iseven(10))
 
-print(dir(nf))
-help(iseven)
+#print(dir(nf))
+#help(iseven)
 #print(iseven.__doc__)  # Print documentation of iseven
