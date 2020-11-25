@@ -16,7 +16,7 @@ class Product:
 
 class DiscountProduct(Product):
     def __init__(self, name, price, disrate):
-        super().__init__(name, price)
+        Product.__init__(self, name, price)
         self.disrate = disrate
 
     # Overriding
@@ -26,7 +26,7 @@ class DiscountProduct(Product):
 
 class TaxableProduct(Product):
     def __init__(self, name, price, taxrate):
-        super().__init__(name, price)
+        Product.__init__(self, name, price)
         self.taxrate = taxrate
 
     # Overriding
@@ -34,6 +34,15 @@ class TaxableProduct(Product):
         return self.price + (self.price * self.taxrate / 100)
 
 
+# Multiple Inheritance
+class TaxableDiscountProduct(DiscountProduct, TaxableProduct):
+    def __init__(self, name, price, disrate, taxrate):
+        DiscountProduct.__init__(self, name, price, disrate)
+        TaxableProduct.__init__(self, name, price, taxrate)
+
+    def netprice(self):
+        discounted_price = DiscountProduct.netprice(self)
+        return discounted_price + (discounted_price * self.taxrate / 100)
 
 
 p = DiscountProduct('Dell Laptop', 56000, 20)
@@ -41,3 +50,7 @@ p.purchase(10)
 p.sell(3)
 print(p.qoh)
 print(p.netprice())
+
+td = TaxableDiscountProduct('iPhone 11', 100000, 30, 15)
+td.purchase(10)
+print(td.netprice())
