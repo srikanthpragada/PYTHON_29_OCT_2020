@@ -1,0 +1,4 @@
+Bill,90,87,77
+Steve,87, 77,76
+Richards,abc,76
+Mike,98,77,99,88
