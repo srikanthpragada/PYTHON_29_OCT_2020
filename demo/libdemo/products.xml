@@ -1,0 +1,22 @@
+<products>
+    <product>
+        <name>Dell Laptop</name>
+        <price>50000</price>
+    </product>
+
+    <product>
+        <name>iPhone 11</name>
+        <price>70000</price>
+    </product>
+
+    <product>
+        <name>Dell Mouse and Keyboard</name>
+        <price>7000</price>
+    </product>
+
+    <product>
+        <name>2TB External HDD</name>
+        <price>7500</price>
+    </product>
+
+</products>
